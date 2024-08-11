@@ -3,7 +3,7 @@ import React from "react";
 const ReactIcon = () => {
   return (
     <svg
-      fill="#000000"
+      fill="#a729f5"
       width="60px"
       height="60px"
       viewBox="0 0 32 32"

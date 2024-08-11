@@ -2,14 +2,21 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
+import IconWithLabel from "./IconWithLabel";
 
 interface MenuOptionProps {
   icon: React.ReactNode;
   text: string;
   route: string;
+  iconBackgroundColor: string;
 }
 
-const MenuOption: React.FC<MenuOptionProps> = ({ icon, text, route }) => {
+const MenuOption: React.FC<MenuOptionProps> = ({
+  icon,
+  text,
+  route,
+  iconBackgroundColor,
+}) => {
   const router = useRouter();
 
   const handleClick = () => {
@@ -21,10 +28,11 @@ const MenuOption: React.FC<MenuOptionProps> = ({ icon, text, route }) => {
       onClick={handleClick}
       className="w-[100%] pl-5 h-24 bg-[#3B4D66] hover:bg-[#455872] cursor-pointer rounded-3xl flex items-center"
     >
-      <div className="w-[70px] h-[70px] rounded-md flex items-center justify-center bg-[#EBF0FF]">
-        {icon} {/* Render the icon directly as JSX */}
-      </div>
-      <p className="font-normal text-2xl pl-8 text-white">{text}</p>
+      <IconWithLabel
+        icon={icon}
+        text={text}
+        iconBackgroundColor={iconBackgroundColor}
+      />
     </div>
   );
 };

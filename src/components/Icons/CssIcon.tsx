@@ -5,6 +5,7 @@ const CssIcon = () => {
     <svg
       height="60px"
       width="60px"
+      fill="#30d887"
       version="1.1"
       id="_x32_"
       xmlns="http://www.w3.org/2000/svg"

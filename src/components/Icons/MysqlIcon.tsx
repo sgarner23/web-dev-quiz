@@ -3,7 +3,7 @@ import React from "react";
 const MysqlIcon = () => {
   return (
     <svg
-      fill="#000000"
+      fill="#4a90e2"
       height="60px"
       width="60px"
       version="1.1"

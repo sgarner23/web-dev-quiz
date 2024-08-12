@@ -1,11 +1,5 @@
 import LightDarkToggle from "@/components/LightDarkToggle";
-import MenuOption from "@/components/MenuOptionWithIcon";
-import HtmlIcon from "@/components/Icons/HtmlIcon";
-import CssIcon from "@/components/Icons/CssIcon";
-import JavascriptIcon from "@/components/Icons/JavascriptIcon";
-import ReactIcon from "@/components/Icons/ReactIcon";
-import MysqlIcon from "@/components/Icons/MysqlIcon";
-import QuizLayout from "@/components/Icons/QuizLayout";
+import QuizLayout from "@/components/QuizLayout";
 import MenuOptionsQuizList from "@/components/MenuOptionsQuizList";
 
 export default function StartMenu() {

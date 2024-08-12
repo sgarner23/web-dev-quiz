@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
-import QuizLayout from "@/components/Icons/QuizLayout";
+import React, { useEffect, useState } from "react";
+import QuizLayout from "@/components/QuizLayout";
 import HtmlIcon from "@/components/Icons/HtmlIcon";
 import CssIcon from "@/components/Icons/CssIcon";
 import JavascriptIcon from "@/components/Icons/JavascriptIcon";
@@ -10,6 +10,10 @@ import IconWithLabel from "@/components/IconWithLabel";
 import quizContent from "../../../../public/data/data.json";
 import AnswerOption from "@/components/AnswerOption";
 import ProgressBar from "@/components/ProgressBar";
+import QuizNotFound from "@/components/QuizNotFound";
+import NoOptionSelectedError from "@/components/NoOptionSelectedError";
+import ErrorIcon from "@/components/Icons/ErrorIcon";
+import CorrectIcon from "@/components/Icons/CorrectIcon";
 
 interface QuizPageProps {
   params: {
@@ -57,31 +61,129 @@ const slugToIconMap: SlugToIconMap = {
 
 const QuizPage: React.FC<QuizPageProps> = ({ params }) => {
   const { slug } = params;
-  const [currentQuestion, setCurrentQuestion] = React.useState(10);
+  const [currentQuestion, setCurrentQuestion] = useState<number>(1);
+  const [correctAnswerSelected, setCorrectAnswerSelected] =
+    useState<boolean>(false);
+  const [incorrectAnswerSelected, setIncorrectAnswerSelected] =
+    useState<boolean>(false);
+  const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [showNoSelectionError, setShowNoSelectionError] =
+    useState<boolean>(false);
+  const [lockOptions, setLockOptions] = useState<boolean>(false);
+  const [nextQuestionPrompt, setNextQuestionPrompt] = useState<boolean>(false);
+  const [answersCorrectTally, setAnswersCorrectTally] = useState<number>(0);
+
+  useEffect(() => {
+    if (selectedOption !== null) {
+      setShowNoSelectionError(false);
+    }
+  }, [selectedOption]);
+
+  if (!slug || !slugToIconMap[slug]) {
+    return <QuizNotFound />;
+  }
   const quiz: any = quizContent.quizzes.find(
     (quiz) => quiz.title.toLowerCase() === slug[0]
   );
+  const quizData: QuizAttributes = slugToIconMap[slug];
+  const question = quiz.questions[currentQuestion - 1].question;
+  const answer = quiz.questions[currentQuestion - 1].answer;
 
-  const quizData: QuizAttributes = slugToIconMap[slug] || {
-    icon: null,
-    text: "Unknown",
-    iconBackgroundColor: "#ffffff",
+  const handleSubmit = () => {
+    if (selectedOption === null) {
+      setShowNoSelectionError(true);
+      return;
+    }
+    if (
+      quiz.questions[currentQuestion - 1].options[selectedOption] === answer
+    ) {
+      setCorrectAnswerSelected(true);
+    } else {
+      setIncorrectAnswerSelected(true);
+    }
+
+    setNextQuestionPrompt(true);
+    setLockOptions(true);
+  };
+
+  const handleNextQuestion = () => {
+    if (currentQuestion === quiz.questions.length) {
+      return;
+    }
+    if (correctAnswerSelected) {
+      setAnswersCorrectTally(answersCorrectTally + 1);
+    }
+    setCurrentQuestion(currentQuestion + 1);
+    setSelectedOption(null);
+    setCorrectAnswerSelected(false);
+    setIncorrectAnswerSelected(false);
+    setLockOptions(false);
+    setNextQuestionPrompt(false);
+  };
+
+  const handleSelectOption = (index: number) => {
+    if (lockOptions) {
+      return;
+    }
+    setSelectedOption(index);
   };
 
   const renderAnswerOptionsList = quiz.questions[
     currentQuestion - 1
   ].options.map((option: string, index: number) => {
-    const optionLetter = String.fromCharCode(65 + index); // Convert index to A, B, C, D...
+    const optionLetter = String.fromCharCode(65 + index); // Convert index to A, B, C, D
+    const correctOptionSelected = correctAnswerSelected && answer === option;
+    const incorrectOptionSelected =
+      incorrectAnswerSelected && selectedOption === index && answer !== option;
 
     return (
-      <AnswerOption key={index}>
-        <div className="flex items-center w-full">
-          <div className="h-14 w-14 rounded-md bg-[#f4f6fa] flex items-center justify-center">
-            <p className="text-2xl text-[#3B4D66]">{optionLetter}</p>
+      <AnswerOption
+        key={index}
+        isSelected={selectedOption === index}
+        onClick={() => handleSelectOption(index)}
+        correctOptionSelected={correctOptionSelected}
+        incorrectOptionSelected={incorrectOptionSelected}
+      >
+        <div className="flex items-center w-full relative">
+          <div
+            className={`h-14 w-14 rounded-md flex items-center justify-center ${
+              selectedOption === index
+                ? "bg-[#a729f5] text-white"
+                : "bg-[#f4f6fa] text-[#3B4D66] group-hover:bg-[#f6e7ff] group-hover:text-[#a729f5]"
+            } ${
+              correctAnswerSelected && answer === option ? "bg-green-500" : ""
+            } ${incorrectOptionSelected ? "bg-red-500" : ""}`}
+          >
+            <p
+              className={`text-2xl ${
+                selectedOption === index
+                  ? "text-white"
+                  : "text-[#3B4D66] group-hover:text-[#a729f5]"
+              }`}
+            >
+              {optionLetter}
+            </p>
           </div>
-          <p className="ml-4 text-white text-xl max-w-[85%] tracking-wide">
+          <p
+            className={`ml-4 text-white text-xl tracking-wide ${
+              incorrectOptionSelected ||
+              (incorrectAnswerSelected && answer === option)
+                ? "max-w-[75%]"
+                : "max-w-[85%]"
+            }`}
+          >
             {option}
           </p>
+          {incorrectOptionSelected && (
+            <div className="absolute right-3">
+              <ErrorIcon />
+            </div>
+          )}
+          {incorrectAnswerSelected && answer === option && (
+            <div className="absolute right-3">
+              <CorrectIcon />
+            </div>
+          )}
         </div>
       </AnswerOption>
     );
@@ -101,7 +203,7 @@ const QuizPage: React.FC<QuizPageProps> = ({ params }) => {
           <p className="italic tracking-wide mt-20 text-[#ABC1E1]">{`Question ${currentQuestion} of ${quiz.questions.length}`}</p>
           <div className="h-52">
             <p className="mt-4 text-2xl text-white font-normal tracking-wide">
-              {quiz.questions[currentQuestion - 1].question}
+              {question}
             </p>
           </div>
           <div className="mt-48">
@@ -110,7 +212,17 @@ const QuizPage: React.FC<QuizPageProps> = ({ params }) => {
             />
           </div>
         </div>
-        <div className="mt-40 w-[44%] space-y-5">{renderAnswerOptionsList}</div>
+        <div className="mt-40 w-[44%] space-y-5">
+          {renderAnswerOptionsList}
+
+          <button
+            onClick={nextQuestionPrompt ? handleNextQuestion : handleSubmit}
+            className="w-[100%] h-24 mt-5 bg-[#a729f5] hover:bg-[#d394fa] text-white text-xl rounded-3xl tracking-wide"
+          >
+            {nextQuestionPrompt ? "Next Question" : "Submit Answer"}
+          </button>
+          {showNoSelectionError && <NoOptionSelectedError />}
+        </div>
       </div>
     </QuizLayout>
   );

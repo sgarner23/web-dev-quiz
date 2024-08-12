@@ -19,5 +19,6 @@
 
 html,
 body {
+  overflow: hidden;
   font-family: "Rubik", sans-serif;
 }

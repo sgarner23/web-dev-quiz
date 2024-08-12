@@ -6,9 +6,9 @@
         {
           "question": "What is the difference between block-level and inline-level elements?",
           "options": [
-            "Block elements take up full width, inline take only necessary width.",
             "Inline elements take up full width, block take only necessary width.",
             "Block elements are for text, inline for images.",
+            "Block elements take up full width, inline take only necessary width.",
             "No difference between block and inline elements."
           ],
           "answer": "Block elements take up full width, inline take only necessary width."
@@ -16,40 +16,40 @@
         {
           "question": "How do you optimize an HTML document for performance?",
           "options": [
-            "Minimize inline styles, compress images, defer non-essential resources.",
+            "Avoid external stylesheets and scripts.",
             "Increase the number of HTML elements.",
-            "Use as many inline styles as possible.",
-            "Avoid external stylesheets and scripts."
+            "Minimize inline styles, compress images, defer non-essential resources.",
+            "Use as many inline styles as possible."
           ],
           "answer": "Minimize inline styles, compress images, defer non-essential resources."
         },
         {
           "question": "What is 'progressive enhancement'?",
           "options": [
-            "Design that emphasizes core content, adding features for capable browsers.",
+            "Strategy to replace old technologies with new ones.",
             "Technique to progressively load content as you scroll.",
             "Enhancing content with animations and graphics.",
-            "Strategy to replace old technologies with new ones."
+            "Design that emphasizes core content, adding features for capable browsers."
           ],
           "answer": "Design that emphasizes core content, adding features for capable browsers."
         },
         {
           "question": "What is the purpose of the 'defer' attribute in a script tag?",
           "options": [
-            "Executes script after HTML is fully parsed.",
             "Executes script before HTML is parsed.",
             "Blocks loading of a script.",
-            "Loads the script asynchronously."
+            "Loads the script asynchronously.",
+            "Executes script after HTML is fully parsed."
           ],
           "answer": "Executes script after HTML is fully parsed."
         },
         {
           "question": "How do you ensure your HTML is accessible?",
           "options": [
-            "Use semantic elements, provide text alternatives, ensure keyboard access.",
             "Avoid images and multimedia content.",
             "Minimize use of CSS and JavaScript.",
-            "Ensure website works on modern browsers only."
+            "Ensure website works on modern browsers only.",
+            "Use semantic elements, provide text alternatives, ensure keyboard access."
           ],
           "answer": "Use semantic elements, provide text alternatives, ensure keyboard access."
         },
@@ -58,18 +58,18 @@
           "options": [
             "'canvas' is bitmap-based, 'svg' is vector-based.",
             "'svg' is bitmap-based, 'canvas' is vector-based.",
-            "'canvas' is for static images, 'svg' for dynamic content.",
-            "'svg' is deprecated in favor of 'canvas'."
+            "'svg' is deprecated in favor of 'canvas'.",
+            "'canvas' is for static images, 'svg' for dynamic content."
           ],
           "answer": "'canvas' is bitmap-based, 'svg' is vector-based."
         },
         {
           "question": "What does the 'meta' charset='UTF-8' tag do?",
           "options": [
-            "Specifies character encoding for proper display of text.",
+            "Provides metadata for search engines.",
             "Defines the language of the document.",
-            "Links the document to an external stylesheet.",
-            "Provides metadata for search engines."
+            "Specifies character encoding for proper display of text.",
+            "Links the document to an external stylesheet."
           ],
           "answer": "Specifies character encoding for proper display of text."
         },
@@ -77,19 +77,19 @@
           "question": "How does the 'picture' element help in responsive design?",
           "options": [
             "Allows browser to choose the best image based on screen size.",
-            "Automatically compresses images.",
+            "'picture' element is deprecated.",
             "Displays videos instead of images.",
-            "'picture' element is deprecated."
+            "Automatically compresses images."
           ],
           "answer": "Allows browser to choose the best image based on screen size."
         },
         {
           "question": "What are the benefits of using HTML5?",
           "options": [
-            "New semantic elements, multimedia support, improved forms, offline APIs.",
-            "Removes all deprecated tags.",
-            "Designed specifically for mobile devices.",
-            "Reduces the need for CSS and JavaScript."
+            "HTML5 reduces the need for CSS and JavaScript.",
+            "HTML5 is designed specifically for mobile devices.",
+            "HTML5 removes all deprecated tags.",
+            "New semantic elements, multimedia support, improved forms, offline APIs."
           ],
           "answer": "New semantic elements, multimedia support, improved forms, offline APIs."
         },
@@ -111,19 +111,19 @@
         {
           "question": "What's the difference between 'flexbox' and 'CSS grid'?",
           "options": [
-            "'flexbox' is one-dimensional, 'CSS grid' is two-dimensional.",
             "'CSS grid' is one-dimensional, 'flexbox' is two-dimensional.",
-            "'flexbox' is for grids, 'CSS grid' for rows.",
-            "'CSS grid' is deprecated."
+            "'CSS grid' is deprecated.",
+            "'flexbox' is one-dimensional, 'CSS grid' is two-dimensional.",
+            "'flexbox' is for grids, 'CSS grid' for rows."
           ],
           "answer": "'flexbox' is one-dimensional, 'CSS grid' is two-dimensional."
         },
         {
           "question": "How does 'z-index' work?",
           "options": [
-            "Determines stack order of overlapping elements.",
             "Adjusts transparency of an element.",
             "Applies only to inline elements.",
+            "Determines stack order of overlapping elements.",
             "Used to adjust font size."
           ],
           "answer": "Determines stack order of overlapping elements."
@@ -131,28 +131,28 @@
         {
           "question": "What is the 'box model'?",
           "options": [
-            "Represents structure of a page: margins, borders, padding, content.",
-            "Method for creating animations.",
             "Defines font size.",
-            "Applies only to inline elements."
+            "Applies only to inline elements.",
+            "Represents structure of a page: margins, borders, padding, content.",
+            "Method for creating animations."
           ],
           "answer": "Represents structure of a page: margins, borders, padding, content."
         },
         {
           "question": "How do transitions differ from animations?",
           "options": [
-            "Transitions occur on property change, animations change multiple properties over time.",
-            "Transitions are for moving elements, animations are for colors.",
             "Transitions are triggered by JavaScript.",
-            "Transitions are available only in modern browsers."
+            "Transitions occur on property change, animations change multiple properties over time.",
+            "Transitions are available only in modern browsers.",
+            "Transitions are for moving elements, animations are for colors."
           ],
           "answer": "Transitions occur on property change, animations change multiple properties over time."
         },
         {
           "question": "What's the difference between 'position: absolute' and 'position: fixed'?",
           "options": [
-            "'absolute' is relative to nearest positioned ancestor, 'fixed' to the viewport.",
             "'fixed' is deprecated.",
+            "'absolute' is relative to nearest positioned ancestor, 'fixed' to the viewport.",
             "'absolute' is for static, 'fixed' for moving elements.",
             "Both are the same."
           ],
@@ -161,10 +161,10 @@
         {
           "question": "How do you achieve responsive web design?",
           "options": [
-            "Use media queries, flexible grids, responsive images.",
             "Create different HTML files for each device.",
-            "Use only inline styles.",
-            "Avoid CSS altogether."
+            "Avoid CSS altogether.",
+            "Use media queries, flexible grids, responsive images.",
+            "Use only inline styles."
           ],
           "answer": "Use media queries, flexible grids, responsive images."
         },
@@ -173,20 +173,20 @@
           "options": [
             "A scripting language that extends CSS with variables, nesting, mixins.",
             "A tool to minify CSS files.",
-            "Converts CSS into JavaScript.",
-            "Creates animations in CSS."
+            "Creates animations in CSS.",
+            "Converts CSS into JavaScript."
           ],
           "answer": "A scripting language that extends CSS with variables, nesting, mixins."
         },
         {
           "question": "How does CSS specificity work?",
           "options": [
-            "Specificity determines which rule is applied based on selector weight.",
-            "Defines font size.",
-            "Creates animations.",
-            "Irrelevant in modern CSS."
+            "CSS specificity creates animations.",
+            "CSS specificity is irrelevant in modern CSS.",
+            "CSS specificity determines which rule is applied based on selector weight.",
+            "CSS specificity defines font size."
           ],
-          "answer": "Specificity determines which rule is applied based on selector weight."
+          "answer": "CSS specificity determines which rule is applied based on selector weight."
         },
         {
           "question": "What is the 'calc()' function?",
@@ -202,9 +202,9 @@
           "question": "What is 'CSS specificity hierarchy'?",
           "options": [
             "Hierarchy determined by selector type; conflicts resolved by specificity value and rule order.",
+            "Irrelevant in modern CSS.",
             "Determined by CSS file size.",
-            "Determined by the browser.",
-            "Irrelevant in modern CSS."
+            "Determined by the browser."
           ],
           "answer": "Hierarchy determined by selector type; conflicts resolved by specificity value and rule order."
         }
@@ -216,19 +216,19 @@
         {
           "question": "What is the difference between 'null' and 'undefined'?",
           "options": [
+            "'undefined' is only in ES6+.",
             "'undefined' is a declared variable with no value, 'null' is an assignment for no value.",
             "'null' is for undefined variables, 'undefined' for null values.",
-            "Both are the same.",
-            "'undefined' is only in ES6+."
+            "Both are the same."
           ],
           "answer": "'undefined' is a declared variable with no value, 'null' is an assignment for no value."
         },
         {
           "question": "Difference between function expressions and declarations?",
           "options": [
-            "Declarations are hoisted, expressions are not.",
-            "Expressions are hoisted, declarations are not.",
             "No difference between the two.",
+            "Expressions are hoisted, declarations are not.",
+            "Declarations are hoisted, expressions are not.",
             "Declarations only used in objects."
           ],
           "answer": "Declarations are hoisted, expressions are not."
@@ -236,20 +236,20 @@
         {
           "question": "Difference between '==' and '==='?",
           "options": [
-            "'==' checks value with type coercion, '===' checks value and type without coercion.",
             "'===' checks value, '==' checks value and type.",
-            "Both are the same.",
-            "'===' is for strings, '==' is for numbers."
+            "'===' is for strings, '==' is for numbers.",
+            "'==' checks value with type coercion, '===' checks value and type without coercion.",
+            "Both are the same."
           ],
           "answer": "'==' checks value with type coercion, '===' checks value and type without coercion."
         },
         {
           "question": "What is prototypal inheritance?",
           "options": [
-            "Allows objects to inherit properties from other objects.",
-            "Defines classes in JavaScript.",
             "Handles asynchronous code.",
-            "Manages state in JavaScript."
+            "Manages state in JavaScript.",
+            "Allows objects to inherit properties from other objects.",
+            "Defines classes in JavaScript."
           ],
           "answer": "Allows objects to inherit properties from other objects."
         },
@@ -266,8 +266,8 @@
         {
           "question": "Explain closures in JavaScript.",
           "options": [
-            "A function that remembers the environment in which it was created.",
             "A method to close functions after execution.",
+            "A function that remembers the environment in which it was created.",
             "Used to manage memory.",
             "Deprecated feature in modern JavaScript."
           ],
@@ -276,40 +276,40 @@
         {
           "question": "Difference between 'call', 'apply', and 'bind'?",
           "options": [
-            "'call' and 'apply' invoke with a specific 'this', 'bind' returns a new function with bound 'this'.",
             "'call' is for synchronous functions, 'apply' for asynchronous, 'bind' for binding events.",
+            "'apply' and 'bind' are deprecated.",
             "All are interchangeable.",
-            "'apply' and 'bind' are deprecated."
+            "'call' and 'apply' invoke with a specific 'this', 'bind' returns a new function with bound 'this'."
           ],
           "answer": "'call' and 'apply' invoke with a specific 'this', 'bind' returns a new function with bound 'this'."
         },
         {
           "question": "How do JavaScript classes differ from functions in inheritance?",
           "options": [
-            "Classes provide simpler syntax for inheritance compared to functions using prototypal inheritance.",
             "Classes do not support inheritance, functions do.",
-            "Classes are syntactic sugar over functions.",
-            "Functions are for methods, classes are for objects."
+            "Functions are for methods, classes are for objects.",
+            "Classes provide simpler syntax for inheritance compared to functions using prototypal inheritance.",
+            "Classes are syntactic sugar over functions."
           ],
           "answer": "Classes provide simpler syntax for inheritance compared to functions using prototypal inheritance."
         },
         {
           "question": "Explain 'pass by value' vs 'pass by reference'.",
           "options": [
-            "Primitives are passed by value, objects by reference.",
-            "Everything in JavaScript is passed by reference.",
             "Everything in JavaScript is passed by value.",
-            "Only arrays are passed by reference."
+            "Only arrays are passed by reference.",
+            "Everything in JavaScript is passed by reference.",
+            "Primitives are passed by value, objects by reference."
           ],
           "answer": "Primitives are passed by value, objects by reference."
         },
         {
-          "question": "Check if a string is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward",
+          "question": "Check if a string is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward.",
           "options": [
-            "function isPalindrome(str) { return str === str.split('').reverse().join(''); }",
-            "function isPalindrome(str) { return str.sort(); }",
+            "function isPalindrome(str) { return str === str.sort(); }",
             "function isPalindrome(str) { return str.split('').reverse().sort(); }",
-            "function isPalindrome(str) { return str.reverse(); }"
+            "function isPalindrome(str) { return str.reverse(); }",
+            "function isPalindrome(str) { return str === str.split('').reverse().join(''); }"
           ],
           "answer": "function isPalindrome(str) { return str === str.split('').reverse().join(''); }"
         }
@@ -321,10 +321,10 @@
         {
           "question": "What are hooks in React?",
           "options": [
-            "Hooks allow state and other features in functional components.",
-            "Hooks handle events in components.",
             "Hooks replace props.",
-            "Hooks optimize performance."
+            "Hooks optimize performance.",
+            "Hooks handle events in components.",
+            "Hooks allow state and other features in functional components."
           ],
           "answer": "Hooks allow state and other features in functional components."
         },
@@ -332,38 +332,38 @@
           "question": "What is a custom hook?",
           "options": [
             "Reusable function with stateful logic, created by prefixing a function name with 'use'.",
-            "A new type of React component.",
             "A way to handle props.",
-            "Used to create context."
+            "Used to create context.",
+            "A new type of React component."
           ],
           "answer": "Reusable function with stateful logic, created by prefixing a function name with 'use'."
         },
         {
           "question": "How do you manage global state with Context API?",
           "options": [
-            "Create context with React.createContext(), provide it at the top level, consume it with useContext.",
             "Pass state as props to every component.",
+            "Create multiple Redux stores.",
             "Use local state in each component.",
-            "Create multiple Redux stores."
+            "Create context with React.createContext(), provide it at the top level, consume it with useContext."
           ],
           "answer": "Create context with React.createContext(), provide it at the top level, consume it with useContext."
         },
         {
           "question": "How do you handle side effects using React hooks?",
           "options": [
-            "Use useEffect for side effects like data fetching, subscriptions.",
-            "Use useState hook.",
             "Use class components and componentDidMount.",
-            "Use props and state."
+            "Use props and state.",
+            "Use useEffect for side effects like data fetching, subscriptions.",
+            "Use useState hook."
           ],
           "answer": "Use useEffect for side effects like data fetching, subscriptions."
         },
         {
           "question": "What is the purpose of 'useMemo'?",
           "options": [
-            "Memoizes expensive calculations, re-computing only when dependencies change.",
             "Stores state between renders.",
             "Creates event listeners.",
+            "Memoizes expensive calculations, re-computing only when dependencies change.",
             "Optimizes CSS in React."
           ],
           "answer": "Memoizes expensive calculations, re-computing only when dependencies change."
@@ -371,50 +371,50 @@
         {
           "question": "How to implement lazy loading in React?",
           "options": [
-            "Use React.lazy() to dynamically import components and Suspense for fallback.",
             "Delay rendering components until needed.",
-            "Use useEffect hook.",
-            "Lazy loading is not possible in React."
+            "Use React.lazy() to dynamically import components and Suspense for fallback.",
+            "Lazy loading is not possible in React.",
+            "Use useEffect hook."
           ],
           "answer": "Use React.lazy() to dynamically import components and Suspense for fallback."
         },
         {
           "question": "How do you manage loading states?",
           "options": [
-            "Set up loading state and update it before and after async operations.",
-            "Use useEffect hook exclusively.",
             "Use class components and componentDidMount.",
-            "Use props and context."
+            "Set up loading state and update it before and after async operations.",
+            "Use props and context.",
+            "Use useEffect hook exclusively."
           ],
           "answer": "Set up loading state and update it before and after async operations."
         },
         {
           "question": "What is the purpose of 'useReducer' and how is it different from 'useState'?",
           "options": [
-            "useReducer is for complex state logic involving sub-values or state dependencies, while useState is for simpler state.",
-            "useReducer is for global state, useState is for local state.",
             "useReducer handles side effects, useState stores state.",
-            "useReducer is deprecated."
+            "useReducer is deprecated.",
+            "useReducer is for global state, useState is for local state.",
+            "useReducer is for complex state logic involving sub-values or state dependencies, while useState is for simpler state."
           ],
           "answer": "useReducer is for complex state logic involving sub-values or state dependencies, while useState is for simpler state."
         },
         {
           "question": "What's the difference between controlled and uncontrolled components?",
           "options": [
-            "Controlled components have state managed by React, uncontrolled handle state internally with refs.",
-            "Uncontrolled components have no state.",
             "Controlled components have no state.",
-            "No difference between the two."
+            "Uncontrolled components have no state.",
+            "No difference between the two.",
+            "Controlled components have state managed by React, uncontrolled handle state internally with refs."
           ],
           "answer": "Controlled components have state managed by React, uncontrolled handle state internally with refs."
         },
         {
           "question": "How do you implement a debounce function in React?",
           "options": [
-            "Delays function execution until a certain time has passed since last call, implemented with setTimeout and useEffect.",
-            "Executes function immediately after event.",
             "Handles CSS in React.",
-            "Creates context in React."
+            "Creates context in React.",
+            "Executes function immediately after event.",
+            "Delays function execution until a certain time has passed since last call, implemented with setTimeout and useEffect."
           ],
           "answer": "Delays function execution until a certain time has passed since last call, implemented with setTimeout and useEffect."
         }
@@ -426,20 +426,20 @@
         {
           "question": "What is an index in MySQL?",
           "options": [
-            "A data structure that speeds up data retrieval.",
-            "A key used to join tables.",
+            "A unique identifier for each row.",
             "A method for encrypting data.",
-            "A unique identifier for each row."
+            "A data structure that speeds up data retrieval.",
+            "A key used to join tables."
           ],
           "answer": "A data structure that speeds up data retrieval."
         },
         {
           "question": "Difference between a primary key and a foreign key?",
           "options": [
-            "Primary key uniquely identifies rows, foreign key links to primary key in another table.",
             "Foreign key uniquely identifies rows, primary key links tables.",
-            "Both are the same.",
-            "Primary key is for indexing, foreign key is for sorting."
+            "Primary key is for indexing, foreign key is for sorting.",
+            "Primary key uniquely identifies rows, foreign key links to primary key in another table.",
+            "Both are the same."
           ],
           "answer": "Primary key uniquely identifies rows, foreign key links to primary key in another table."
         },
@@ -448,8 +448,8 @@
           "options": [
             "INNER JOIN returns matching rows, LEFT JOIN returns all left table rows, RIGHT JOIN returns all right table rows.",
             "INNER JOIN returns all rows, LEFT JOIN returns matching left rows, RIGHT JOIN returns matching right rows.",
-            "INNER JOIN for inner tables, LEFT JOIN for left tables, RIGHT JOIN for right tables.",
-            "No difference between them."
+            "No difference between them.",
+            "INNER JOIN for inner tables, LEFT JOIN for left tables, RIGHT JOIN for right tables."
           ],
           "answer": "INNER JOIN returns matching rows, LEFT JOIN returns all left table rows, RIGHT JOIN returns all right table rows."
         },
@@ -458,8 +458,8 @@
           "options": [
             "Primary, unique, full-text, composite.",
             "Primary, full-text, JSON, numeric.",
-            "Full-text, numeric, string.",
-            "Primary, foreign, secondary."
+            "Primary, foreign, secondary.",
+            "Full-text, numeric, string."
           ],
           "answer": "Primary, unique, full-text, composite."
         },
@@ -467,18 +467,18 @@
           "question": "Purpose of the EXPLAIN statement?",
           "options": [
             "Provides information on query execution to optimize performance.",
-            "Creates indexes.",
+            "Displays table structure.",
             "Executes SQL queries.",
-            "Displays table structure."
+            "Creates indexes."
           ],
           "answer": "Provides information on query execution to optimize performance."
         },
         {
           "question": "What is a composite key?",
           "options": [
+            "Used for indexing multiple columns.",
             "A primary key with two or more columns to uniquely identify a row.",
             "A key with multiple foreign keys.",
-            "Used for indexing multiple columns.",
             "Creates joins between tables."
           ],
           "answer": "A primary key with two or more columns to uniquely identify a row."
@@ -486,19 +486,19 @@
         {
           "question": "How does MySQL handle transactions?",
           "options": [
-            "Ensures a series of operations complete successfully, adhering to ACID properties.",
             "Creates temporary tables for each operation.",
-            "Does not support transactions.",
-            "ACID properties are for NoSQL databases."
+            "ACID properties are for NoSQL databases.",
+            "Ensures a series of operations complete successfully, adhering to ACID properties.",
+            "Does not support transactions."
           ],
           "answer": "Ensures a series of operations complete successfully, adhering to ACID properties."
         },
         {
           "question": "Difference between clustered and non-clustered indexes?",
           "options": [
+            "No difference between them.",
             "Clustered index determines physical order of data, non-clustered points to physical data.",
             "Non-clustered determines physical order, clustered is for sorting.",
-            "No difference between them.",
             "Clustered indexes are for full-text search."
           ],
           "answer": "Clustered index determines physical order of data, non-clustered points to physical data."
@@ -507,19 +507,19 @@
           "question": "What is normalization and its forms?",
           "options": [
             "Organizes data to minimize redundancy and ensure integrity: 1NF, 2NF, 3NF, BCNF.",
-            "Method for compressing data.",
             "Used to link multiple tables.",
-            "Only for indexing."
+            "Only for indexing.",
+            "Method for compressing data."
           ],
           "answer": "Organizes data to minimize redundancy and ensure integrity: 1NF, 2NF, 3NF, BCNF."
         },
         {
           "question": "What are stored procedures and how do they differ from functions?",
           "options": [
-            "Reusable SQL code blocks that can perform multiple operations, functions return a single value.",
             "Stored procedures are for indexing, functions are for sorting.",
+            "Stored procedures are deprecated.",
             "Stored procedures create joins, functions index data.",
-            "Stored procedures are deprecated."
+            "Reusable SQL code blocks that can perform multiple operations, functions return a single value."
           ],
           "answer": "Reusable SQL code blocks that can perform multiple operations, functions return a single value."
         }

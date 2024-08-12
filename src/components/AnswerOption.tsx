@@ -3,7 +3,7 @@ import React from "react";
 interface AnswerOptionProps {
   children: React.ReactNode;
   isSelected: boolean;
-  onClick: any;
+  onClick: () => void;
   correctOptionSelected: boolean;
   incorrectOptionSelected: boolean;
 }
@@ -15,15 +15,20 @@ const AnswerOption: React.FC<AnswerOptionProps> = ({
   correctOptionSelected,
   incorrectOptionSelected,
 }) => {
-  console.log(correctOptionSelected);
+  // Determine the border color based on the selection state
+  let borderColor = "border-transparent"; // Default to transparent
+  if (correctOptionSelected) {
+    borderColor = "border-green-500";
+  } else if (incorrectOptionSelected) {
+    borderColor = "border-red-500";
+  } else if (isSelected) {
+    borderColor = "border-[#a729f5]";
+  }
+
   return (
     <div
       onClick={onClick}
-      className={`w-[100%] pl-5 h-24 bg-[#3B4D66] hover:bg-[#455872] cursor-pointer rounded-3xl flex items-center group ${
-        isSelected && "border-2 border-[#a729f5]"
-      } ${correctOptionSelected && "border-2 border-green-500"} ${
-        incorrectOptionSelected && "border-2 border-red-500"
-      }`}
+      className={`w-[100%] pl-5 h-24 bg-[#3B4D66] hover:bg-[#455872] cursor-pointer rounded-3xl flex items-center group border-2 ${borderColor}`}
     >
       {children}
     </div>

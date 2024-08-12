@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import QuizLayout from "@/components/QuizLayout";
 import HtmlIcon from "@/components/Icons/HtmlIcon";
 import CssIcon from "@/components/Icons/CssIcon";
@@ -61,6 +62,7 @@ const slugToIconMap: SlugToIconMap = {
 
 const QuizPage: React.FC<QuizPageProps> = ({ params }) => {
   const { slug } = params;
+  const router = useRouter();
   const [currentQuestion, setCurrentQuestion] = useState<number>(1);
   const [correctAnswerSelected, setCorrectAnswerSelected] =
     useState<boolean>(false);
@@ -108,6 +110,9 @@ const QuizPage: React.FC<QuizPageProps> = ({ params }) => {
 
   const handleNextQuestion = () => {
     if (currentQuestion === quiz.questions.length) {
+      router.push(
+        `/quiz/results?quiz-title=${quiz.title}&correct=${answersCorrectTally}`
+      );
       return;
     }
     if (correctAnswerSelected) {
@@ -164,26 +169,14 @@ const QuizPage: React.FC<QuizPageProps> = ({ params }) => {
               {optionLetter}
             </p>
           </div>
-          <p
-            className={`ml-4 text-white text-xl tracking-wide ${
-              incorrectOptionSelected ||
-              (incorrectAnswerSelected && answer === option)
-                ? "max-w-[75%]"
-                : "max-w-[85%]"
-            }`}
-          >
+          <p className="ml-4 text-white text-xl tracking-wide max-w-[76%]">
             {option}
           </p>
-          {incorrectOptionSelected && (
-            <div className="absolute right-3">
-              <ErrorIcon />
-            </div>
-          )}
-          {incorrectAnswerSelected && answer === option && (
-            <div className="absolute right-3">
-              <CorrectIcon />
-            </div>
-          )}
+
+          <div className="absolute right-3 flex items-center justify-center w-8 h-8">
+            {incorrectOptionSelected && <ErrorIcon />}
+            {incorrectAnswerSelected && answer === option && <CorrectIcon />}
+          </div>
         </div>
       </AnswerOption>
     );

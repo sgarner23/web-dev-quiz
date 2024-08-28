@@ -1,6 +1,6 @@
 "use client";
 import QuizLayout from "@/components/QuizLayout";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import ResultsPageContent from "./ResultsPageContent";
 import { useSearchParams } from "next/navigation";
@@ -23,8 +23,6 @@ const ResultsPage = () => {
   useEffect(() => {
     const title = searchParams.get("quiz-title");
     const correct = searchParams.get("correct");
-    console.log("title", title);
-    console.log("correct", correct);
 
     if (title) {
       setQuizTitle(title);
@@ -49,4 +47,12 @@ const ResultsPage = () => {
   );
 };
 
-export default ResultsPage;
+const ResultsPageWrapper = () => {
+  return (
+    <Suspense fallback={<LoadingSpinner />}>
+      <ResultsPage />
+    </Suspense>
+  );
+};
+
+export default ResultsPageWrapper;

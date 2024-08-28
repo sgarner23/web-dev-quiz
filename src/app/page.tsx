@@ -5,9 +5,6 @@ import MenuOptionsQuizList from "@/components/MenuOptionsQuizList";
 export default function StartMenu() {
   return (
     <QuizLayout>
-      <div className="flex justify-end">
-        <LightDarkToggle />
-      </div>
       <div className="flex mt-16 justify-between">
         <div className="w-[50%] ml-4">
           <h1 className="text-5xl font-extralight mb-3 tracking-wide text-white">

@@ -19,6 +19,6 @@
 
 html,
 body {
-  overflow: hidden;
+  overflow: scroll;
   font-family: "Rubik", sans-serif;
 }
